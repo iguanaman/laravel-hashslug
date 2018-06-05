@@ -27,13 +27,13 @@ trait HasHashSlug {
 	 * Cached hashslug
 	 * @var null|string
 	 */
-	private $slug = null;
+	protected $slug = null;
 
 	/**
 	 * Cached HashIds instance
 	 * @var null|\Hashids\Hashids
 	 */
-	private static $hashIds = null;
+	protected static $hashIds = null;
 
 	/**
 	 * Returns a chached Hashids instanse
@@ -41,7 +41,7 @@ trait HasHashSlug {
 	 * 
 	 * @return \Hashids\Hashids
 	 */
-	private static function getHashids(){
+	protected static function getHashids(){
 		if (is_null(static::$hashIds)){
 
 			$minSlugLength = config('hashslug.minSlugLength', 5);
